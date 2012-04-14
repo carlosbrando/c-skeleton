@@ -43,7 +43,7 @@ clean:
 	rm -rf build $(OBJECTS) $(TESTS)
 	rm -f tests/tests.log
 	find . -name "*.gc*" -exec rm {} \;
-	rm -rf ‘find . -name "*.dSYM" -print‘
+	rm -rf 'find . -name "*.dSYM" -print'
 
 # The Install
 install: all
