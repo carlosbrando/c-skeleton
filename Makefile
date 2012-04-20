@@ -35,8 +35,10 @@ tests: CFLAGS += $(TARGET)
 tests: $(TESTS)
 	sh ./tests/runtests.sh
 
+# VALGRIND="valgrind --leak-check=full --show-reachable=yes --log-file=tests/valgrind.log" $(MAKE)
 valgrind:
-	VALGRIND="valgrind --log-file=/tmp/valgrind-%p.log" $(MAKE)
+	VALGRIND="valgrind --log-file=tests/valgrind.log" $(MAKE)
+	@cat tests/valgrind.log
 
 # The Cleaner
 clean:
